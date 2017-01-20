@@ -16,7 +16,7 @@ export default defineMessages({
   },
   trymeHeader: {
     id: 'boilerplate.containers.HomePage.tryme.header',
-    defaultMessage: 'Try me!',
+    defaultMessage: 'Welcome',
   },
   trymeMessage: {
     id: 'boilerplate.containers.HomePage.tryme.message',

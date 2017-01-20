@@ -38,15 +38,118 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
-      path: '/features',
-      name: 'features',
+    },
+    {
+      path: '/login',
+      name: 'login',
       getComponent(nextState, cb) {
-        import('containers/FeaturePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
+        const importModules = Promise.all([
+          import('containers/LoginPage/reducer'),
+          import('containers/LoginPage/sagas'),
+          import('containers/LoginPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('login', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/EmployeeDashboardPage/reducer'),
+          import('containers/EmployeeDashboardPage/sagas'),
+          import('containers/EmployeeDashboardPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('dashboard', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/hours',
+      name: 'hours',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/EmployeeHoursPage/reducer'),
+          import('containers/EmployeeHoursPage/sagas'),
+          import('containers/EmployeeHoursPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('hours', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/AdminDashboardPage/reducer'),
+          import('containers/AdminDashboardPage/sagas'),
+          import('containers/AdminDashboardPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('admin', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/clockin',
+      name: 'clockin',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/ClockInPage/reducer'),
+          import('containers/ClockInPage/sagas'),
+          import('containers/ClockInPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('clockin', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

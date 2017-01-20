@@ -7,5 +7,10 @@ const Img = styled(NormalImg)`
   margin: 0 auto;
   display: block;
 `;
+export const ImgSmall = styled(NormalImg)`
+  width: 20%;
+  margin: 0 auto;
+  display: block;
+`;
 
 export default Img;

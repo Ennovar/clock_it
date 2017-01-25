@@ -17,7 +17,7 @@ function Message(props) {
 }
 
 Message.propTypes = {
-
+  message: React.PropTypes.string,
 };
 
 export default Message;

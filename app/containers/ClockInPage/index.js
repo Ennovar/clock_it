@@ -49,7 +49,7 @@ export class ClockInPage extends React.Component { // eslint-disable-line react/
           onChange={this.props.onTaskChange}
           options={this.props.ClockInPage.tasks}
         />
-        <Button onClick={this.props.onClockIn}>Clock In</Button>
+        <Button onClick={this.props.onClockIn} color="secondary">Clock In</Button>
       </div>
     );
   }

@@ -9,7 +9,8 @@ const Img = styled(NormalImg)`
 `;
 export const ImgSmall = styled(NormalImg)`
   width: 20%;
-  margin: 0 auto;
+  min-width: 160px;
+  margin: 10px auto;
   display: block;
 `;
 

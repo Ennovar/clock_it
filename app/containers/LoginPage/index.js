@@ -16,6 +16,7 @@ import {
   passwordUpdateAction,
   tryUserLoginAction,
 } from './actions';
+
 export class LoginPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (

@@ -18,7 +18,6 @@ import {
 } from './actions';
 export class LoginPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log(this.props.LoginPage.message)
     return (
       <div>
         <Helmet
@@ -55,7 +54,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(passwordUpdateAction(event.target.value));
     },
     onSubmit: () => {
-      console.log('hello')
       dispatch(tryUserLoginAction());
     },
   };

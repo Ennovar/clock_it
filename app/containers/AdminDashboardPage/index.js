@@ -96,11 +96,9 @@ function mapDispatchToProps(dispatch) {
     onProjectHoursView: () => {
       dispatch(projectHoursViewAction());
     },
-    onEndChanged: (event) => {
-      console.log(event.target.value);
+    onEndChanged: () => {
     },
-    onFromChanged: (event) => {
-      console.log(event.target.value);
+    onFromChanged: () => {
     },
   };
 }

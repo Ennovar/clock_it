@@ -16,7 +16,7 @@ export function* getTimeEntries() {
 }
 export function* getTimeEntriesSaga() {
   // See example in containers/HomePage/sagas.js
-  yield* takeEvery(getTimeEntriesAction().type, getTimeEntries);
+  yield* takeEvery(getTimeEntriesAction().type, getTimeEntries); // eslint-disable-line
 }
 
 // All sagas to be loaded

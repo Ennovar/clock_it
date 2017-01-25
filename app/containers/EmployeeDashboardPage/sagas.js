@@ -16,10 +16,10 @@ export function* clockInViewRoute() {
   yield put(push('/clockin'));
 }
 export function* hoursViewPageSaga() {
-  yield* takeLatest(viewHoursAction().type, hoursViewRoute);
+  yield* takeLatest(viewHoursAction().type, hoursViewRoute); // eslint-disable-line
 }
 export function* clockInViewPageSaga() {
-  yield* takeLatest(clockInAction().type, clockInViewRoute);
+  yield* takeLatest(clockInAction().type, clockInViewRoute); // eslint-disable-line
 }
 
 // All sagas to be loaded

@@ -28,11 +28,11 @@ const buttonStyles = css`
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
-  background-color: ${(props) => props.type ? buttonColors[props.type].background : 'black'};
-  color: ${(props) => props.type ? buttonColors[props.type].text : 'black'};
+  background-color: ${(props) => props.color ? buttonColors[props.color].background : 'black'};
+  color: ${(props) => props.color ? buttonColors[props.color].text : 'black'};
 
   &:active {
-    background: ${(props) => props.type ? buttonColors[props.type].background : 'black'};
+    background: ${(props) => props.color ? buttonColors[props.color].background : 'black'};
     color: #fff;
   }
 `;

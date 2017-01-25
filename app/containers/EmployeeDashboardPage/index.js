@@ -39,9 +39,9 @@ export class EmployeeDashboardPage extends React.Component { // eslint-disable-l
           <FormattedMessage {...messages.header} />
         </H1>
         <Form>
-          <Button onClick={this.props.onClockIn} type="primary">Clock In</Button>
-          <Button onClick={this.props.onClockOut} type="disabled">Clock Out</Button>
-          <Button onClick={this.props.onViewHours} type="secondary">Hours</Button>
+          <Button onClick={this.props.onClockIn} color="primary">Clock In</Button>
+          <Button onClick={this.props.onClockOut} color="disabled">Clock Out</Button>
+          <Button onClick={this.props.onViewHours} color="secondary">Hours</Button>
         </Form>
       </div>
     );

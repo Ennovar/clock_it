@@ -29,8 +29,8 @@ class LoginForm extends React.Component { // eslint-disable-line react/prefer-st
         </H1>
         <Form>
           <TextInput onChange={this.props.onUsernameChange} placeholder="Username" />
-          <TextInput onChange={this.props.onPasswordChange} placeholder="Password" type="password" />
-          <Button onClick={this.props.onSubmit} type="secondary">Submit</Button>
+          <TextInput onChange={this.props.onPasswordChange} placeholder="Password" color="password" />
+          <Button onClick={this.props.onSubmit} color="secondary">Submit</Button>
         </Form>
       </div>
     );

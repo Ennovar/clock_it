@@ -30,7 +30,7 @@ class LoginForm extends React.Component { // eslint-disable-line react/prefer-st
         <Form>
           <TextInput onChange={this.props.onUsernameChange} placeholder="Username" />
           <TextInput onChange={this.props.onPasswordChange} placeholder="Password" type="password" />
-          <Button onClick={this.props.onSubmit} >Submit</Button>
+          <Button onClick={this.props.onSubmit} type="secondary">Submit</Button>
         </Form>
       </div>
     );

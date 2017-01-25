@@ -13,13 +13,13 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       <div>
         <ImgSmall src={Banner} alt="Ennovar" />
         <NavBar>
-          <HeaderLink to="/">
+          <HeaderLink to="/" type="primary">
             <FormattedMessage {...messages.home} />
           </HeaderLink>
-          <HeaderLink to="/login">
+          <HeaderLink to="/login" type="primary">
             <FormattedMessage {...messages.login} />
           </HeaderLink>
-          <HeaderLink to="/dashboard">
+          <HeaderLink to="/dashboard" type="primary">
             <FormattedMessage {...messages.dashboard} />
           </HeaderLink>
         </NavBar>

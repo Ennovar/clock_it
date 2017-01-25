@@ -4,7 +4,6 @@
  *
  */
 
-import { fromJS } from 'immutable';
 import {
   DEFAULT_ACTION,
   CLOCK_IN_ACTION,
@@ -12,7 +11,7 @@ import {
   VIEW_HOURS_ACTION,
 } from './constants';
 
-const initialState = fromJS({});
+export const initialState = {};
 
 function employeeDashboardPageReducer(state = initialState, action) {
   switch (action.type) {

@@ -11,7 +11,7 @@ import React from 'react';
 function Message(props) {
   return (
     <div>
-      <h3>{props.message.text}</h3>
+      <h3>{props.message}</h3>
     </div>
   );
 }

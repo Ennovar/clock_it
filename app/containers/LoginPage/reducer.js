@@ -13,7 +13,7 @@ import {
   USER_LOGIN_SUCCESS,
 } from './constants';
 
-const initialState = fromJS({});
+export const initialState = fromJS({});
 
 function loginPageReducer(state = initialState, action) {
   switch (action.type) {

@@ -10,7 +10,7 @@ import {
   GET_TIME_ENTRIES_SUCCESS,
 } from './constants';
 
-const initialState = fromJS({});
+export const initialState = fromJS({});
 
 function employeeHoursPageReducer(state = initialState, action) {
   switch (action.type) {

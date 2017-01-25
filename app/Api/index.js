@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://0.0.0.0:9999';
+const BASE_URL = 'http://159.203.165.219:8888/api/v1';
 export default class Api {
   static getTimeEntries() {
     return axios({

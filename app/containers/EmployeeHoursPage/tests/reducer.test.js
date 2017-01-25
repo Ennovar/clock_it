@@ -1,9 +1,8 @@
 
-import { fromJS } from 'immutable';
-import employeeHoursPageReducer from '../reducer';
+import employeeHoursPageReducer, { initialState } from '../reducer';
 
 describe('employeeHoursPageReducer', () => {
   it('returns the initial state', () => {
-    expect(employeeHoursPageReducer(undefined, {})).toEqual(fromJS({}));
+    expect(employeeHoursPageReducer(undefined, {})).toEqual(initialState);
   });
 });

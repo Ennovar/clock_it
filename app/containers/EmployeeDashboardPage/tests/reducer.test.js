@@ -1,9 +1,9 @@
 
-import { fromJS } from 'immutable';
-import employeeDashboardPageReducer from '../reducer';
+// import { fromJS } from 'immutable';
+import employeeDashboardPageReducer, { initialState } from '../reducer';
 
 describe('employeeDashboardPageReducer', () => {
   it('returns the initial state', () => {
-    expect(employeeDashboardPageReducer(undefined, {})).toEqual(fromJS({}));
+    expect(employeeDashboardPageReducer(undefined, {})).toEqual(initialState);
   });
 });

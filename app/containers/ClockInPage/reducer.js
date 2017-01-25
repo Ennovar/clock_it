@@ -12,7 +12,7 @@ import {
   PROJECT_CHANGE_ACTION,
 } from './constants';
 
-const initialState = {
+export const initialState = {
   projects: [],
   tasks: [],
 };

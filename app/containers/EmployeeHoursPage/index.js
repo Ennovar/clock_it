@@ -56,7 +56,7 @@ function mapDispatchToProps(dispatch) {
     dispatch,
     getTimeEntries: () => {
       dispatch(getTimeEntriesAction());
-    }
+    },
   };
 }
 

@@ -1,4 +1,4 @@
-import { take, call, put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 import { takeLatest } from 'redux-saga';
 import Api from '../../Api';
 import {
@@ -24,7 +24,7 @@ export function* userLogin() {
   }
 }
 export function* tryUserLoginSaga() {
-  yield* takeLatest(tryUserLoginAction().type, userLogin);
+  yield* takeLatest(tryUserLoginAction().type, userLogin); // eslint-disable-line
 }
 
 // All sagas to be loaded

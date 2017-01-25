@@ -10,7 +10,7 @@ import {
   PROJECT_HOURS_VIEW,
 } from './constants';
 
-const initialState = {
+export const initialState = {
   peopleHoursViewActive: true,
   projectHoursViewActive: false,
   loading: false,

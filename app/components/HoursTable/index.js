@@ -64,7 +64,7 @@ class HoursTable extends React.Component { // eslint-disable-line react/prefer-s
 }
 
 HoursTable.propTypes = {
-  size: React.PropTypes.number,
+  timeEntries: React.PropTypes.array,
 };
 
 export default HoursTable;

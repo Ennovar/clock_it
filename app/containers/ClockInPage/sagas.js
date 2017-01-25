@@ -33,13 +33,13 @@ export function* getTasks() {
   yield put(getTasksSuccessAction(tasks.data));
 }
 export function* clockInSaga() {
-  yield* takeLatest(clockInAction().type, clockIn);
+  yield* takeLatest(clockInAction().type, clockIn); // eslint-disable-line
 }
 export function* getProjectsSaga() {
-  yield* takeLatest(getProjectsAction().type, getProjects);
+  yield* takeLatest(getProjectsAction().type, getProjects); // eslint-disable-line
 }
 export function* getTasksSaga() {
-  yield* takeLatest(getTasksAction().type, getTasks);
+  yield* takeLatest(getTasksAction().type, getTasks); // eslint-disable-line
 }
 
 // All sagas to be loaded

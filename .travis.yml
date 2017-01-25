@@ -1,27 +1,31 @@
 language: node_js
-
+services:
+  - docker
 node_js:
-  - 7
-  - 6
-  - 5
-
+- 7
 script:
-  - node ./internals/scripts/generate-templates-for-linting
-  - npm run test
-  - npm run build
-
+- node ./internals/scripts/generate-templates-for-linting
+- npm run test
+- npm run build
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 notifications:
   email:
     on_failure: change
-
-after_success: 'npm run coveralls'
-
+  slack:
+    secure: F8Ikqm3Eu9HmZ/OQJdDOEJP6C7BfmDkxLo4QeJCOTYZAi8RulO6cgwwdQtzPLoPcvkjM3504OsnGPp8Ex4wnrwn0yAhZs/+bz/TpOIChmz8Ulc3I21CgjmkQ6Z12Voa4CrMtSruEcHN0JPVK6VN3blpx5hyC1u1cnU8HfszifZDvpdiOcResn1GZp9wCiNuk3VkmNc6WiTpgb5sr7QUfWv0TohpABoKHbGIYWpSsm2xLv02z6o/EVcQbNiZZVP5unxtcK+9MueZ5DAtLvsdS+1Fc2Hl/XZJPMDE4tXijoNbF9EQf0mcotoq6tMDOxUawf3wb1gaRnXgG3ZkX1CpQbCeo1C07YJhHKOdjFC8BFVz6V1IwP/8Hj3Xfdgoc8P8Nrj7HPTtYfDrdwBNo71VjXUoeV9OUreWrfIOYnf19iGAtr+GUmVqf3SAMYOEgcZdCe8R+5ir7XGc8C0sSLGXlFODU9SuMc/gLZV0OZMMNHu3Vl3ZfE303ZSzy/jYHj1EVAdNoC0SaZIeD5MdQ37H/O6SWK2gF7emuZlnLxKzCceqyRVkUyMNIjIvxkH1hpSRV6ICJtddbtVk2NboFj5DJPFf+iYzcBHa9M/ar4+XD5tn320PHtcavlLse6sU4bJXXIU8f3ZiUsQdC7hoXH4qHSQ5x46FSzA4G8eoUBsvatjc=
+after_success:
+- docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+- export REPO=ennovarplayerone/clock_it_client
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
+  ; fi`
+- docker build -f Dockerfile -t $REPO:$TRAVIS_COMMIT .
+- docker tag $REPO:$TRAVIS_COMMIT $REPO:$TAG
+- docker tag $REPO:$TRAVIS_COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+- docker push $REPO
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules

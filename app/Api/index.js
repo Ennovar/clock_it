@@ -40,7 +40,7 @@ export default class Api {
       data: {
         email: username,
         password,
-      }
+      },
     });
   }
 }
